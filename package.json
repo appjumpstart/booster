@@ -1,0 +1,31 @@
+{
+  "name": "booster",
+  "version": "1.0.0",
+  "description": "A Knex.js utility to make setting up a database super easy",
+  "main": "index.js",
+  "bin": {
+    "booster": "index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "knex",
+    "database",
+    "setup",
+    "postgres",
+    "pg"
+  ],
+  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.1.0",
+    "np": "^3.0.4"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "dotenv": "^6.0.0",
+    "knex": "^0.14.6",
+    "pg": "^7.4.3"
+  }
+}
