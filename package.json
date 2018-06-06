@@ -1,5 +1,5 @@
 {
-  "name": "booster",
+  "name": "@appjumpstart/booster",
   "version": "1.0.0",
   "description": "A Knex.js utility to make setting up a database super easy",
   "main": "index.js",
