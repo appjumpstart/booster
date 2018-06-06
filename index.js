@@ -1,26 +1,29 @@
+#!/usr/bin/env node
+
 const { resolve } = require('path')
 
-const knexfile = require(resolve('./knexfile.js'))
 const { green, red } = require('chalk')
+const Knex = require('knex')
+
+const knexfile = require(resolve('./knexfile.js'))
 
 async function setup () {
   try {
-    const environment = process.env.NODE_ENV || 'development'
-    const { client, connection } = knexfile[environment]
+    const config = knexfile[process.env.NODE_ENV || 'development']
+    const { database } = config.connection
 
-    let config = { client, connection: Object.assign({}, connection) }
     let knex
     let exists
-    if (client === 'pg') {
+    if (config.client === 'pg') {
       // Configure knex to connect to a system database and determine if the
       // environment's database exists.
       config.connection.database = 'postgres'
-      knex = require('knex')(config)
+      knex = Knex(config)
       exists = await knex
         .first('datname')
         .from('pg_database')
-        .where('datname', connection.database)
-    } else if (client === 'mysql' || client === 'mariadb') {
+        .where('datname', database)
+    } else if (config.client === 'mysql' || config.client === 'mariadb') {
       console.error(red('\n  🚫 MySQL/MariaDB support has not landed yet!'))
     } else {
       console.error(red('\n  🚫 Please open an issue or PR for your database!'))
@@ -28,9 +31,13 @@ async function setup () {
 
     // Create the database if it doesn't exist.
     if (!exists) {
-      await knex.raw(`CREATE DATABASE ${connection.database};`)
-      console.log(green(`\n  🚀 Database ${connection.database} created!`))
+      await knex.raw(`CREATE DATABASE ${database};`)
+      console.log(green(`\n  🚀 Database ${database} created!`))
     }
+
+    // Connect to the existing or newly created database.
+    config.connection.database = database
+    knex = Knex(config)
 
     // Run migrations.
     await knex.migrate.latest()
