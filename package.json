@@ -1,6 +1,6 @@
 {
   "name": "@appjumpstart/booster",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Knex.js utility to make setting up a database super easy",
   "main": "index.js",
   "bin": {
@@ -26,6 +26,7 @@
     "chalk": "^2.4.1",
     "dotenv": "^6.0.0",
     "knex": "^0.14.6",
+    "meow": "^5.0.0",
     "pg": "^7.4.3"
   }
 }

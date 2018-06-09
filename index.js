@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-
 const { resolve } = require('path')
 
+const meow = require('meow')
 const { green, red } = require('chalk')
 const Knex = require('knex')
 
@@ -9,7 +9,19 @@ const knexfile = require(resolve('./knexfile.js'))
 
 async function setup () {
   try {
-    const config = knexfile[process.env.NODE_ENV || 'development']
+    const { input } = meow(`
+      Usage
+        booster <environment?>
+
+      Example
+        ❯ npx booster
+
+        👟 Migrations run!
+
+        🌱 Database seeded!
+    `)
+
+    const config = knexfile[input[0] || process.env.NODE_ENV || 'development']
     const { database } = config.connection
 
     let knex
