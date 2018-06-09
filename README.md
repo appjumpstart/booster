@@ -27,7 +27,7 @@ If `NODE_ENV` isn't set, `booster` defaults to the development config in your
 Set up a `test` database:
 
 ```console
-❯ NODE_ENV=test npx booster
+❯ npx booster test
 
   🚀 Database booster_test created!
 
