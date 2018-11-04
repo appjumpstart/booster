@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "10"
 services:
-  - docker
+  - postgresql
 script:
   - yarn lint
-  - yarn test:complete
+  - yarn test
