@@ -28,5 +28,13 @@
     "knex": "^0.14.6",
     "meow": "^5.0.0",
     "pg": "^7.4.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appjumpstart/booster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appjumpstart/booster/issues"
+  },
+  "homepage": "https://github.com/appjumpstart/booster#readme"
 }

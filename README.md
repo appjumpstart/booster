@@ -1,9 +1,7 @@
 # booster
-> A [Knex.js](https://knexjs.org/) utility to make setting up a database super
-> easy
+> A [Knex.js][knexUrl] utility to make setting up a database super easy
 
-[![Npm page][npm-image]][npm-url]
-[![appjumpstart chat][gitter-image]][gitter-url]
+[![npm page][npmImage]][npmUrl]
 
 # Installation
 
@@ -45,7 +43,6 @@ Set up a `test` database:
     height="50">
 </a>
 
-[npm-image]: https://img.shields.io/npm/v/@appjumpstart/booster.svg
-[npm-url]: https://www.npmjs.com/package/@appjumpstart/booster
-[gitter-image]: https://img.shields.io/gitter/room/appjumpstart/appjumpstart.svg
-[gitter-url]: https://gitter.im/appjumpstart
+[knexUrl]: https://knexjs.org
+[npmImage]: https://img.shields.io/npm/v/@appjumpstart/booster.svg
+[npmUrl]: https://www.npmjs.com/package/@appjumpstart/booster
