@@ -7,7 +7,8 @@
     "booster": "index.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:complete": "docker-compose up -d && jest && docker-compose down"
   },
   "keywords": [
     "knex",
