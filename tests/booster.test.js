@@ -2,6 +2,7 @@ const { join } = require('path')
 
 const execa = require('execa')
 const Knex = require('knex')
+
 const config = require('./fixtures/knexfile')
 
 const booster = '../../index.js'
@@ -12,6 +13,16 @@ async function assertDbSeeded (knex) {
   expect(rows[0].name).toBe('Personal')
   expect(rows[1].name).toBe('Business')
 }
+
+afterAll(async () => {
+  const knex = Knex(config.postgres)
+  try {
+    await knex.raw(`DROP DATABASE ${config.development.connection.database}`)
+    await knex.raw(`DROP DATABASE ${config.test.connection.database}`)
+  } finally {
+    knex.destroy()
+  }
+})
 
 test('booster migrates and seeds the default database', async () => {
   const knex = Knex(config.test)
