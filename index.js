@@ -52,7 +52,7 @@ async function run ({ input, flags }) {
 
     // Seed the database.
     await knex.seed.run()
-    console.log(green(`\n  🌱 Database seeded!`))
+    console.log(green(`\n  🌱 Database seeded! \n`))
 
     // Exit successfully.
     return 0
@@ -80,6 +80,7 @@ const cli = meow(`
     👟 Migrations run!
 
     🌱 Database seeded!
+
 `, {
   flags: {
     help: { type: 'boolean', alias: 'h' },
