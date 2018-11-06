@@ -5,22 +5,17 @@ const meow = require('meow')
 const { green, red } = require('chalk')
 const Knex = require('knex')
 
-const knexfile = require(resolve('./knexfile.js'))
+async function run ({ input, flags }) {
+  // Determine knexfile path.
+  const filepath = flags.config && flags.config.includes('.js')
+    ? resolve(flags.config)
+    : resolve(flags.config || '.', 'knexfile.js')
 
-async function setup () {
   try {
-    const { input } = meow(`
-      Usage
-        booster <environment?>
+    // Load Knex configuration from knexfile.js.
+    const knexfile = require(filepath)
 
-      Example
-        ❯ npx booster
-
-        👟 Migrations run!
-
-        🌱 Database seeded!
-    `)
-
+    // Extract configuration based on current environment.
     const config = knexfile[input[0] || process.env.NODE_ENV || 'development']
     const { database } = config.connection
 
@@ -60,11 +55,40 @@ async function setup () {
     console.log(green(`\n  🌱 Database seeded!`))
 
     // Exit successfully.
-    process.exit(0)
+    return 0
   } catch (err) {
-    console.error(err)
-    process.exit(1)
+    if (err.code === 'MODULE_NOT_FOUND') {
+      console.error(red(`\n  🚫 Could not find knexfile.js at ${filepath}`))
+    } else {
+      console.error(err)
+    }
+    return 1
   }
 }
 
-setup()
+const cli = meow(`
+  Usage
+    booster <environment?>
+
+  Options
+    --help, -h    Output (this) help
+    --config, -c  Specify the knexfile path (defaults to <root>/knexfile.js)
+
+  Example
+    ❯ npx booster
+
+    👟 Migrations run!
+
+    🌱 Database seeded!
+`, {
+  flags: {
+    help: { type: 'boolean', alias: 'h' },
+    config: { type: 'string', alias: 'c' }
+  }
+})
+
+if (cli.flags.help) {
+  cli.showHelp()
+} else {
+  run(cli).then(code => process.exit(code))
+}

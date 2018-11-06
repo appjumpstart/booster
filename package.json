@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest",
-    "test:complete": "docker-compose up -d && jest && docker-compose kill",
+    "test:complete": "docker-compose up -d && jest && docker-compose down",
     "lint": "eslint --ext js index.js tests"
   },
   "keywords": [
@@ -22,7 +22,6 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
-    "dotenv": "^6.0.0",
     "knex": "^0.15.2",
     "meow": "^5.0.0",
     "pg": "^7.4.3"
@@ -35,6 +34,7 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "execa": "^1.0.0",
     "jest": "^23.1.0",
     "np": "^3.0.4"
   },
