@@ -3,8 +3,7 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRESS_DB=$DB_NAME
-      - POSTGRES_USER=$DB_USER
-      - POSTGRES_PASSWORD=$DB_PASS
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=williemayshayes
     ports:
       - 5432:5432

@@ -2,6 +2,8 @@
 
 exports[`booster migrates and seeds the default database 1`] = `
 "
+  🚀 Database booster_test created!
+
   👟 Migrations run!
 
   🌱 Database seeded!"
@@ -9,6 +11,8 @@ exports[`booster migrates and seeds the default database 1`] = `
 
 exports[`booster migrates and seeds the specified database 1`] = `
 "
+  🚀 Database booster created!
+
   👟 Migrations run!
 
   🌱 Database seeded!"
