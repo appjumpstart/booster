@@ -36,8 +36,16 @@ async function run ({ input, flags }) {
       console.error(red('\n  🚫 Please open an issue or PR for your database!'))
     }
 
-    // Create the database if it doesn't exist.
-    if (!exists) {
+    if (exists && flags.drop) {
+      // If the database exists, drop it.
+      await knex.raw(`DROP DATABASE ${database};`)
+      console.log(green(`\n  ✅ Database ${database} dropped! \n`))
+      return 0
+    } else if (flags.drop) {
+      console.error(red(`\n  🚫 Database ${database} doesn't exist!`))
+      return 1
+    } else if (!exists) {
+      // Create the database if it doesn't exist.
       await knex.raw(`CREATE DATABASE ${database};`)
       console.log(green(`\n  🚀 Database ${database} created!`))
     }
@@ -73,6 +81,7 @@ const cli = meow(`
   Options
     --help, -h    Output (this) help
     --config, -c  Specify the knexfile path (defaults to <root>/knexfile.js)
+    --drop, -d    Drop the database
 
   Example
     ❯ npx booster
@@ -84,7 +93,8 @@ const cli = meow(`
 `, {
   flags: {
     help: { type: 'boolean', alias: 'h' },
-    config: { type: 'string', alias: 'c' }
+    config: { type: 'string', alias: 'c' },
+    drop: { type: 'boolean', alias: 'd' }
   }
 })
 

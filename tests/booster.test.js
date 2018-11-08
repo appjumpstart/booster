@@ -15,13 +15,8 @@ async function assertDbSeeded (knex) {
 }
 
 afterAll(async () => {
-  const knex = Knex(config.postgres)
-  try {
-    await knex.raw(`DROP DATABASE ${config.development.connection.database}`)
-    await knex.raw(`DROP DATABASE ${config.test.connection.database}`)
-  } finally {
-    knex.destroy()
-  }
+  await execa(booster, ['--drop'], { cwd })
+  await execa(booster, ['development', '--drop'], { cwd })
 })
 
 test('booster migrates and seeds the default database', async () => {
