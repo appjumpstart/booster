@@ -19,7 +19,7 @@
     "pg"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
-  "license": "ISC",
+  "license": "Apache 2.0 with Commons Clause",
   "dependencies": {
     "chalk": "^2.4.1",
     "knex": "^0.15.2",

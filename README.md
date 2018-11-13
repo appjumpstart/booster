@@ -34,6 +34,10 @@ Set up a `test` database:
   🌱 Database seeded!
 ```
 
+## License
+
+Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
+
 &nbsp;
 
 <a href="https://github.com/appjumpstart">
@@ -46,3 +50,4 @@ Set up a `test` database:
 [knexUrl]: https://knexjs.org
 [npmImage]: https://img.shields.io/npm/v/@appjumpstart/booster.svg
 [npmUrl]: https://www.npmjs.com/package/@appjumpstart/booster
+[licenseUrl]: https://github.com/appjumpstart/booster/blob/master/LICENSE
