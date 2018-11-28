@@ -2,6 +2,7 @@
 > A [Knex.js][knexUrl] utility to make setting up a database super easy
 
 [![npm page][npmImage]][npmUrl]
+[![build status][buildImage]][buildUrl]
 
 # Installation
 
@@ -50,4 +51,6 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 [knexUrl]: https://knexjs.org
 [npmImage]: https://img.shields.io/npm/v/@appjumpstart/booster.svg
 [npmUrl]: https://www.npmjs.com/package/@appjumpstart/booster
+[buildImage]: https://dev.azure.com/appjumpstart/booster/_apis/build/status/appjumpstart.booster
+[buildUrl]: https://dev.azure.com/appjumpstart/booster/_build
 [licenseUrl]: https://github.com/appjumpstart/booster/blob/master/LICENSE
