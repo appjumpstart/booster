@@ -13,5 +13,6 @@ steps:
   - script: |
       yarn
       yarn lint
+      docker run -d -p 5678:5678 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=williemayshayes postgres
       yarn test
     displayName: 'Install and test'
