@@ -36,7 +36,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "execa": "^1.0.0",
     "jest": "^24.1.0",
-    "np": "^4.0.1"
+    "np": "^5.0.1"
   },
   "repository": {
     "type": "git",
