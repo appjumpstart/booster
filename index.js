@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { resolve } = require('path')
 
+const path = require('path')
 const meow = require('meow')
 const { green, red } = require('chalk')
 const Knex = require('knex')
@@ -8,8 +8,8 @@ const Knex = require('knex')
 async function run ({ input, flags }) {
   // Determine knexfile path.
   const filepath = flags.config && flags.config.includes('.js')
-    ? resolve(flags.config)
-    : resolve(flags.config || '.', 'knexfile.js')
+    ? path.resolve(flags.config)
+    : path.resolve(flags.config || '.', 'knexfile.js')
 
   try {
     // Load Knex configuration from knexfile.js.

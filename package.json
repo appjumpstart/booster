@@ -1,5 +1,5 @@
 {
-  "name": "@appjumpstart/booster",
+  "name": "@ianwalter/booster",
   "version": "1.3.0",
   "description": "A Knex.js utility to make setting up a database super easy",
   "main": "index.js",
@@ -7,9 +7,9 @@
     "booster": "index.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "bff",
     "test:complete": "docker-compose up -d && jest && docker-compose down",
-    "lint": "eslint --ext js index.js tests"
+    "lint": "eslint ."
   },
   "keywords": [
     "knex",
@@ -19,7 +19,7 @@
     "pg"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
-  "license": "Apache 2.0 with Commons Clause",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "chalk": "^2.4.1",
     "knex": "^0.16.2",
@@ -27,35 +27,28 @@
     "pg": "^7.4.3"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jest": "^22.0.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "@ianwalter/bff": "^6.3.1",
+    "@ianwalter/eslint-config": "^2.0.1",
     "execa": "^1.0.0",
-    "jest": "^24.1.0",
     "np": "^4.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appjumpstart/booster.git"
+    "url": "git+https://github.com/ianwalter/booster.git"
   },
   "bugs": {
-    "url": "https://github.com/appjumpstart/booster/issues"
+    "url": "https://github.com/ianwalter/booster/issues"
   },
-  "homepage": "https://github.com/appjumpstart/booster#readme",
+  "homepage": "https://github.com/ianwalter/booster#readme",
+  "bff": {
+    "plugins": [
+      "./tests/plugin.js"
+    ]
+  },
   "eslintConfig": {
     "root": true,
-    "env": {
-      "jest/globals": true
-    },
     "extends": [
-      "standard"
-    ],
-    "plugins": [
-      "jest"
+      "@ianwalter"
     ]
   }
 }

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default database migration and seeding 1`] = `
+"
+  🚀 Database booster created!
+
+  👟 Migrations run!
+
+  🌱 Database seeded! 
+"
+`;
+
+exports[`error thrown when specified knexfile not found 1`] = `
+"Command failed: ../../index.js -c /tmp
+
+  🚫 Could not find knexfile.js at /tmp/knexfile.js
+
+"
+`;
+
+exports[`migration and seeding using specified knexfile 1`] = `
+"
+  👟 Migrations run!
+
+  🌱 Database seeded! 
+"
+`;
+
+exports[`specified database migration and seeding 1`] = `
+"
+  🚀 Database booster_test created!
+
+  👟 Migrations run!
+
+  🌱 Database seeded! 
+"
+`;
