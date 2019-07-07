@@ -45,6 +45,11 @@
       "./tests/plugin.js"
     ]
   },
+  "renovate": {
+    "extends": [
+      "@ianwalter"
+    ]
+  },
   "eslintConfig": {
     "root": true,
     "extends": [
