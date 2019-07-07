@@ -7,7 +7,7 @@
     "booster": "index.js"
   },
   "scripts": {
-    "test": "bff",
+    "test": "bff -c 1",
     "test:complete": "docker-compose up -d && jest && docker-compose down",
     "lint": "eslint ."
   },
