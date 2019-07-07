@@ -6,12 +6,7 @@ exports[`default database migration and seeding 1`] = `
 🌱  [1mDatabase seeded![22m"
 `;
 
-exports[`error thrown when specified knexfile not found 1`] = `
-"Command failed: ../../index.js -c /tmp
-
-🚫  [31m[1mCould not find knexfile.js at /tmp/knexfile.js[22m[39m
-"
-`;
+exports[`error thrown when specified knexfile not found 1`] = `"Command failed with exit code 1 (EPERM): ../../index.js -c /tmp"`;
 
 exports[`migration and seeding using specified knexfile 1`] = `
 "👟  [1mMigrations run![22m
