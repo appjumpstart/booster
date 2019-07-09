@@ -15,4 +15,4 @@ steps:
       CI: true
     commands:
       - yarn
-      - yarn test -c 1
+      - yarn test
