@@ -1,0 +1,18 @@
+kind: pipeline
+name: CI
+
+services:
+  - name: db
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: williemayshayes
+
+steps:
+  - name: test
+    image: node:12
+    environment:
+      CI: true
+    commands:
+      - yarn
+      - yarn test -c 1

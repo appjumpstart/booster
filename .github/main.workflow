@@ -1,6 +1,6 @@
 workflow "CI" {
   on = "push"
-  resolves = ["Lint"] # TODO: add test target back
+  resolves = ["Lint"]
 }
 
 action "Install" {
@@ -13,11 +13,4 @@ action "Lint" {
   needs = ["Install"]
   runs = "yarn"
   args = "lint"
-}
-
-action "Test" {
-  uses = "docker://node:12"
-  needs = ["Install"]
-  runs = "yarn"
-  args = ["test", "-c", "1"]
 }
