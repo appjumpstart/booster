@@ -1,5 +1,5 @@
 kind: pipeline
-name: CI
+name: ci
 
 services:
   - name: db
@@ -9,10 +9,17 @@ services:
       POSTGRES_PASSWORD: williemayshayes
 
 steps:
+  - name: install
+    image: node:12.6
+    commands:
+      - yarn
+  - name: lint
+    image: node:12.6
+    commands:
+      - yarn lint
   - name: test
-    image: node:12
+    image: node:12.6
     environment:
       CI: true
     commands:
-      - yarn
       - yarn test
