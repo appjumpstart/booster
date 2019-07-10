@@ -2,6 +2,8 @@
 > A [Knex.js][knexUrl] utility to make setting up a database super easy
 
 [![npm page][npmImage]][npmUrl]
+[![Build Status](https://cloud.drone.io/api/badges/ianwalter/booster/status.svg)](https://cloud.drone.io/ianwalter/booster)
+
 
 # Installation
 
