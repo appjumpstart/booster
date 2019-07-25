@@ -24,7 +24,7 @@
     "@ianwalter/print": "^3.0.1",
     "knex": "^0.18.4",
     "meow": "^5.0.0",
-    "pg": "^7.11.0"
+    "pg": "^7.12.0"
   },
   "devDependencies": {
     "@ianwalter/bff": "^6.4.0",
