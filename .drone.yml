@@ -10,15 +10,15 @@ services:
 
 steps:
   - name: install
-    image: node:12.6
+    image: node:12.7
     commands:
       - yarn
   - name: lint
-    image: node:12.6
+    image: node:12.7
     commands:
       - yarn lint
   - name: test
-    image: node:12.6
+    image: node:12.7
     environment:
       CI: true
     commands:
