@@ -8,7 +8,8 @@ jobs:
     services:
       db:
         image: postgres
-        ports: 5432/tcp
+        ports:
+          - 5432/tcp
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: williemayshayes
