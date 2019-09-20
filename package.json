@@ -29,8 +29,8 @@
   "devDependencies": {
     "@ianwalter/bff": "^6.5.1",
     "@ianwalter/eslint-config": "^3.0.0",
-    "execa": "^2.0.4",
-    "np": "^5.1.0"
+    "@ianwalter/release": "^3.0.5",
+    "execa": "^2.0.4"
   },
   "repository": {
     "type": "git",
