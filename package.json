@@ -27,7 +27,7 @@
     "pg": "^7.12.1"
   },
   "devDependencies": {
-    "@ianwalter/bff": "^6.5.1",
+    "@ianwalter/bff": "^6.5.2",
     "@ianwalter/eslint-config": "^3.0.0",
     "@ianwalter/release": "^3.0.5",
     "execa": "^2.0.4"
